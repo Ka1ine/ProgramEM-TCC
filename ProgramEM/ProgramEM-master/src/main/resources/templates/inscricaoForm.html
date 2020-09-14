@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nova Inscricao</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--Google Fonts - font inter all-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/inscricao/css/inscricao.css">
+</head>
+
+<body>
+    <!--INICIO NAV-->
+    <div class="row">
+        <nav class="navbar fixed-top" style="background-color: #ebebeb">
+            <div class="col">
+                <img style="width: 300px;" class="logoprogramem" src="/inscricao/img/logo.png">
+            </div>
+            <div class="col-">
+                <a href="/"><button type="button" class="botao btn btn-light">Home</button></a>
+            </div>
+            <div class="col-">
+                <a href="/sobre"><button type="button" class="botao btn btn-light">Sobre</button></a>
+            </div>
+            <div class="col-">
+                <a href="/inscricao"><button type="button" class="botao btn btn-light">Inscrição</button></a>
+            </div>
+            <div class="col-">
+                <a href="/contato"><button type="button" class="botao btn btn-light">Contato</button></a>
+            </div>
+            <div class="col-">
+                <a href="/areaDoAluno"><button type="button" class="botao btn btn-light" id="aluno">Área do aluno</button></a>
+            </div>
+        </nav>
+        </nav>
+    </div>
+    <!--FIM NAV-->
+    <!--TITULO DA PAGINA-->
+    <div class="container-fluid">
+        <div class="row titulo">
+            <div class="col"></div>
+            <div class="col- titulo">
+                <p><b>Área de incrição</b></p>
+            </div>
+            <div class="col"></div>
+        </div>
+        <!--COMEÇO DE CONTEUDO-->
+        <!--FOTINHA-->
+        <div class="row">
+            <div class="col-">
+                <img class="rounded float-left," id="imagem1" style="width: 400px; margin-left: 20px;"
+                    src="/inscricao/img/boneco2.png">
+            </div>
+            <!--TEXTO-->
+            <div class="col texto">
+                <p id="p1" class="textochome" style="text-align: justify; margin-right: 20px;">
+                    <b>Ok, 1 segundo...</b> Vc já leu o nosso regulamento? Ué como assim você veio se inscrever sem ler o regulamento? já pensou na hipótese de sermos <b>traficantes internacionais</b> de jovens e estamos pedindo seus dados para um possível sequestro? Pois é, segue abaixo o <b>link do regulamento</b> para você mesmo tirar suas conclusões sobre quem somos e decidir se vai topar ou não ser traficado, quer dizer, ser selecionado para estar conosco <b>durante esses 2 meses.</b></p>
+                <p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-">
+                <a href="https://drive.google.com/file/d/1KOZsuxHiHgPqL7bg3O4teCoJ79zfFCbN/view?usp=sharing"><button type="button" class="botaotexto btn btn-info" style="margin-top: -30px;">Link do Regulamento</button></a>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <!--FIM CONTEUDO-->
+
+
+    <!--INICIO FORM-->
+    <div class="container-lg formulario">
+        <h1 id="tituloform">Nova Inscrição :)</h1>
+        <form action="/inscricaoInsere" method="post">
+
+            <!-------------------------------INFORMAÇÕES GERAIS---------------------------------->
+            <!--Nome-->
+            <div class="form-group">
+                <label class="form-label conteudoform" for="nome">Nome:</label>
+                <input class="form-control inform" id="nome" name="nome" placeholder="Seu nome completo" required>
+            </div>
+            <!--Email-->
+            <div class="form-group">
+                <label class="form-label conteudoform" for="email">Email:</label>
+                <input class="form-control" id="email" name="email" placeholder="Seu email" required>
+            </div>
+            <!--Data de Nascimento-->
+            <div class="form-group">
+                <label class="form-label conteudoform" for="dataDeNascimento">Data de Nascimento:</label>
+                <input class="form-control" id="dataDeNascimento" name="dataDeNascimento" type="date" required>
+            </div>
+            <!--Estado-->
+            <label class="my-1 mr-2 conteudoform" for="estado">Estado:</label>
+            <select class="custom-select my-1 mr-sm-2" id="estado" name="estado" required>
+                <option value="" disabled selected>Escolha...</option>
+                <option value="AC">AC</option>
+                <option value="AL">AL</option>
+                <option value="AP">AP</option>
+                <option value="AM">AM</option>
+                <option value="BA">BA</option>
+                <option value="CE">CE</option>
+                <option value="DF">DF</option>
+                <option value="ES">ES</option>
+                <option value="GO">GO</option>
+                <option value="MA">MA</option>
+                <option value="MT">MT</option>
+                <option value="MS">MS</option>
+                <option value="MG">MG</option>
+                <option value="PA">PA</option>
+                <option value="PB">PB</option>
+                <option value="PR">PR</option>
+                <option value="PE">PE</option>
+                <option value="PI">PI</option>
+                <option value="RJ">RJ</option>
+                <option value="RN">RN</option>
+                <option value="RS">RS</option>
+                <option value="RO">RO</option>
+                <option value="RR">RR</option>
+                <option value="SC">SC</option>
+                <option value="SP">SP</option>
+                <option value="SE">SE</option>
+                <option value="TO">TO</option>
+            </select>
+            <!--Cidade-->
+            <div class="form-group">
+                <label class="form-label conteudoform" for="cidade">Cidade:</label>
+                <input class="form-control" id="cidade" name="cidade" placeholder="Sua cidade" required>
+            </div>
+            <!--Número-->
+            <div class="form-group">
+                <label class="form-label conteudoform" for="numero">Número:</label>
+                <input class="form-control" id="numero" name="numero" placeholder="Ex:(99)99999-9999" required>
+            </div>
+
+            <!------------------------------INFORMAÇÕES PESSOAIS--------------------------------->
+            <!--Identidade De Genero-->
+            <label class="my-1 mr-2 conteudoform" for="identidadeDeGenero">Identidade De Genero:</label>
+            <select class="custom-select my-1 mr-sm-2" id="identidadeDeGenero" name="identidadeDeGenero" required>
+                <option value="" disabled selected>Escolha...</option>
+                <option value="Gênero Fluido">Gênero Fluido</option>
+                <option value="Mulher Cisgênero">Mulher Cisgênero</option>
+                <option value="Homem Cisgênero">Homem Cisgênero</option>
+                <option value="Homem transgênero">Homem transgênero</option>
+                <option value="Prefiro não responder">Prefiro não responder</option>
+                <option value="Outr@">Outr@</option>
+            </select>
+            <!--Orientação sexual-->
+            <label class="my-1 mr-2 conteudoform" for="orientacaoSexual">Orientação sexual:</label>
+            <select class="custom-select my-1 mr-sm-2" id="orientacaoSexual" name="orientacaoSexual" required>
+                <option value="" disabled selected>Escolha...</option>
+                <option value="Assexual">Assexual</option>
+                <option value="Bissexual">Bissexual</option>
+                <option value="Héterossexual">Héterossexual</option>
+                <option value="Homossexual">Homossexual</option>
+                <option value="Pansexual">Pansexual</option>
+                <option value="Prefiro não responder">Prefiro não responder</option>
+                <option value="Outr@">Outr@</option>
+            </select>
+            <!--Identidade Étnico racial-->
+            <label class="my-1 mr-2 conteudoform" for="identidadeEtnicoRacial">Identidade Étnico racial:</label>
+            <select class="custom-select my-1 mr-sm-2" id="identidadeEtnicoRacial" name="identidadeEtnicoRacial"
+                required>
+                <option value="" disabled selected>Escolha...</option>
+                <option value="Amarela">Amarela</option>
+                <option value="Branca">Branca</option>
+                <option value="Indígena">Indígena</option>
+                <option value="Parda">Parda</option>
+                <option value="Preta">Preta</option>
+                <option value="Prefiro não responder">Prefiro não responder</option>
+                <option value="Outr@">Outr@</option>
+            </select>
+
+            <!---------------------------------ESCOLARIDADE------------------------------------>
+            <!--Modalidade de ensino médio-->
+            <label class="my-1 mr-2 conteudoform" for="modalidadeDeEnsinoMedio">Modalidade de ensino médio:</label>
+            <select class="custom-select my-1 mr-sm-2" id="modalidadeDeEnsinoMedio" name="modalidadeDeEnsinoMedio"
+                required>
+                <option value="" disabled selected>Escolha...</option>
+                <option value="EM regular - estudo integral">EM regular - estudo integral</option>
+                <option value="EM regular - estudo meio período">EM regular - estudo meio período</option>
+                <option value="EM técnico - estudo em escola técnica">EM técnico - estudo em escola técnica</option>
+            </select>
+            <!--Ano-->
+            <label class="my-1 mr-2 conteudoform" for="ano">Ano:</label>
+            <select class="custom-select my-1 mr-sm-2" id="ano" name="ano" required>
+                <option value="" disabled selected>Escolha...</option>
+                <option value="1º Ano">1º Ano</option>
+                <option value="2º Ano">2º Ano</option>
+                <option value="3º Ano">3º Ano</option>
+                <option value="4º Ano (Escola Técnica)">4º Ano (Escola Técnica)</option>
+                <option value="Me formei em 2020">Me formei em 2020</option>
+            </select>
+
+            <!----------------------------------PROGRAMAÇÃO----------------------------------->
+            <!--Já tinha interesse por programação?-->
+            <legend class="col-form-label conteudoform">Já tinha interesse por programação?</legend>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="interesse" id="interesse"
+                    value="Já tinha muito interesse" required>
+                <label class="form-check-label" for="interesse">Já tinha muito interesse</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="interesse" id="interesse" value="Tinha Interesse"
+                    required>
+                <label class="form-check-label" for="interesse">Tinha Interesse</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="interesse" id="interesse"
+                    value="Nunca tinha pensado nisso antes" required>
+                <label class="form-check-label" for="interesse">Nunca tinha pensado nisso antes</label>
+            </div>
+            <!--Já estudou programação?-->
+            <legend class="col-form-label conteudoform">Já estudou programação?</legend>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="estudou" id="estudou" value="Sim, sei mexer bastante"
+                    required>
+                <label class="form-check-label" for="estudou">Sim, sei mexer bastante</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="estudou" id="estudou"
+                    value="Sim, já vi alguns códigos" required>
+                <label class="form-check-label" for="estudou">Sim, já vi alguns códigos</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="estudou" id="estudou"
+                    value="Não sei nem por onde começar" required>
+                <label class="form-check-label" for="estudou">Não sei nem por onde começar</label>
+            </div>
+            <!--Qual e sua disponibilidade de horário para fazer o curso?-->
+            <label class="my-1 mr-2 conteudoform" for="disponibilidade">Qual e sua disponibilidade de horário para fazer o
+                curso?</label>
+            <select class="custom-select my-1 mr-sm-2" id="disponibilidade" name="disponibilidade">
+                <option value="" disabled selected>Escolha...</option>
+                <option value="De manhã (de segunda a sexta)">De manhã (de segunda a sexta)</option>
+                <option value="De tarde (de segunda a sexta)">De tarde (de segunda a sexta)</option>
+                <option value="De noite (de segunda a sexta)">De noite (de segunda a sexta)</option>
+                <option value="Sábado o dia todo">Sábado o dia todo</option>
+                <option value="Domingo o dia todo">Domingo o dia todo</option>
+                <option value="Todas as opções">Todas as opções</option>
+            </select>
+            <!--Porque você se interessou em fazer o programEM?-->
+            <div class="form-group conteudoform">
+                <label for="porqueInteresse">Porque você se interessou em fazer o programEM?</label>
+                <textarea class="form-control" id="porqueInteresse" name="porqueInteresse" rows="3" placeholder="Digite com carinho :)"></textarea>
+            </div>
+
+            <!-----------------------------BOTÕES DE ENVIAR E LIMPAR------------------------------------>
+            <input class="botaoslide btn btn-light" type="submit" value="Enviar">
+            <input class="botaoslide btn btn-danger" type="reset" value="Limpar"><br>
+        </form>
+    </div>
+    <!--FIM FORM-->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
